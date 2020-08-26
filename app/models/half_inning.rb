@@ -1,0 +1,2 @@
+class HalfInning < ApplicationRecord
+end

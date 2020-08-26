@@ -1,7 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a personal project that aims to simulate the Deadball RPG game.
+
+Things done(ish):
+* Basic Migration
+
+Things to do:
+* Add position to players migrations
+* Models validations
+* Basic seeds file
+* Models methods
+* Setup doc
 
 Things you may want to cover:
 
