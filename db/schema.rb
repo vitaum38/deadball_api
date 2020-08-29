@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_230417) do
     t.bigint "pitcher_id", null: false
     t.bigint "batter_id", null: false
     t.bigint "game_id", null: false
-    t.bigint "inning_id", null: false
+    t.bigint "half_inning_id", null: false
     t.bigint "a_team_id", null: false
     t.bigint "d_team_id", null: false
     t.integer "balls"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_230417) do
     t.index ["batter_id"], name: "index_at_bats_on_batter_id"
     t.index ["d_team_id"], name: "index_at_bats_on_d_team_id"
     t.index ["game_id"], name: "index_at_bats_on_game_id"
-    t.index ["inning_id"], name: "index_at_bats_on_inning_id"
+    t.index ["half_inning_id"], name: "index_at_bats_on_half_inning_id"
     t.index ["pitcher_id"], name: "index_at_bats_on_pitcher_id"
   end
 
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_230417) do
     t.index ["home_team_id"], name: "index_games_on_home_team_id"
   end
 
-  create_table "innings", force: :cascade do |t|
+  create_table "half_innings", force: :cascade do |t|
     t.integer "number"
     t.string "position"
     t.integer "runs"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2020_08_25_230417) do
     t.bigint "d_team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["a_team_id"], name: "index_innings_on_a_team_id"
-    t.index ["d_team_id"], name: "index_innings_on_d_team_id"
-    t.index ["game_id"], name: "index_innings_on_game_id"
+    t.index ["a_team_id"], name: "index_half_innings_on_a_team_id"
+    t.index ["d_team_id"], name: "index_half_innings_on_d_team_id"
+    t.index ["game_id"], name: "index_half_innings_on_game_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -70,9 +70,14 @@ ActiveRecord::Schema.define(version: 2020_08_25_230417) do
     t.string "shirt_name"
     t.date "birthdate"
     t.float "base_avg"
+    t.float "era"
+    t.float "fielding"
     t.string "main_hand"
+    t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_players_on_name"
+    t.index ["shirt_name"], name: "index_players_on_shirt_name"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -85,14 +90,14 @@ ActiveRecord::Schema.define(version: 2020_08_25_230417) do
   end
 
   add_foreign_key "at_bats", "games"
-  add_foreign_key "at_bats", "innings"
+  add_foreign_key "at_bats", "half_innings"
   add_foreign_key "at_bats", "players", column: "batter_id"
   add_foreign_key "at_bats", "players", column: "pitcher_id"
   add_foreign_key "at_bats", "teams", column: "a_team_id"
   add_foreign_key "at_bats", "teams", column: "d_team_id"
   add_foreign_key "games", "teams", column: "away_team_id"
   add_foreign_key "games", "teams", column: "home_team_id"
-  add_foreign_key "innings", "games"
-  add_foreign_key "innings", "teams", column: "a_team_id"
-  add_foreign_key "innings", "teams", column: "d_team_id"
+  add_foreign_key "half_innings", "games"
+  add_foreign_key "half_innings", "teams", column: "a_team_id"
+  add_foreign_key "half_innings", "teams", column: "d_team_id"
 end

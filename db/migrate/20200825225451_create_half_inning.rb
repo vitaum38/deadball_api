@@ -1,6 +1,6 @@
 class CreateHalfInning < ActiveRecord::Migration[5.2]
   def change
-    create_table :innings do |t|
+    create_table :half_innings do |t|
       t.integer :number
       t.string  :position
       t.integer :runs

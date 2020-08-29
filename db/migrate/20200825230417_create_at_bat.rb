@@ -4,7 +4,7 @@ class CreateAtBat < ActiveRecord::Migration[5.2]
       t.references :pitcher, foreign_key: { to_table: :players }, null: false
       t.references :batter, foreign_key: { to_table: :players }, null: false
       t.references :game, foreign_key: true, null: false
-      t.references :inning, foreign_key: true, null: false
+      t.references :half_inning, foreign_key: true, null: false
       t.references :a_team, foreign_key: { to_table: :teams }, null: false
       t.references :d_team, foreign_key: { to_table: :teams }, null: false
 
