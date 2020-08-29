@@ -7,4 +7,8 @@ class Player < ApplicationRecord
   validates :era, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 20 }
   validates :main_hand, inclusion: { in: %w(L R) }
   validates :position, inclusion: { in: %w(P RP CP C 1B 2B 3B SS LF CF RF) }
+
+  def rounded_avg
+    base_avg.round(2)
+  end
 end
