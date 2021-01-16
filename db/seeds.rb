@@ -17,6 +17,8 @@ Player.create(name: 'Travis Jaws', shirt_name: 'Jaws', birthdate: nil, base_avg:
 Player.create(name: 'Danny Jensen', shirt_name: 'Jensen', birthdate: nil, base_avg: 0.209, era: 0.0, fielding: 0.982, main_hand: 'R', position: 'C')
 Player.create(name: 'Joe Kanip', shirt_name: 'Kanip', birthdate: nil, base_avg: 0.270, era: 0.0, fielding: 0.993, main_hand: 'L', position: 'SS')
 
+Player.create(name: 'Hyun Jin Ken', shirt_name: 'Ken', birthdate: nil, base_avg: 0.0, era: 2.92, fielding: 1, main_hand: 'L', position: 'P')
+
 # Boston Blue Ties Players
 Player.create(name: 'Alex Verruga', shirt_name: 'Verruga', birthdate: nil, base_avg: 0.283, era: 0.0, fielding: 0.997, main_hand: 'L', position: 'LF')
 Player.create(name: 'Rafael Deves', shirt_name: 'Deves', birthdate: nil, base_avg: 0.277, era: 0.0, fielding: 0.998, main_hand: 'L', position: '3B')
@@ -27,6 +29,8 @@ Player.create(name: 'Christian Vascos', shirt_name: 'Vascos', birthdate: nil, ba
 Player.create(name: 'Kevin Column', shirt_name: 'Column', birthdate: nil, base_avg: 0.260, era: 0.0, fielding: 0.999, main_hand: 'R', position: 'RF')
 Player.create(name: 'Jackie Chanley Jr', shirt_name: 'Brady Jr', birthdate: nil, base_avg: 0.236, era: 0.0, fielding: 0.989, main_hand: 'L', position: 'CF')
 Player.create(name: 'José Serasa', shirt_name: 'Serasa', birthdate: nil, base_avg: 0.272, era: 0.0, fielding: 0.981, main_hand: 'R', position: '2B')
+
+Player.create(name: 'Martin Esperez', shirt_name: 'Esperez', birthdate: nil, base_avg: 0.0, era: 4.58, fielding: 1, main_hand: 'L', position: 'P')
 
 # Teams
 Team.create(name: 'Toronto Red Robins', acronym: 'TRR', mock_lineup: [1, 2, 3, 4, 5, 6, 7, 8, 9])

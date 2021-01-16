@@ -4,12 +4,17 @@ This is a personal project that aims to simulate the Deadball RPG game.
 
 Things done(ish):
 * Basic Migration
+* Add position to players migrations
+* Basic seeds file
+
+In progress:
+* Models validations
+* Models methods
+* DieRoller (as a gem?)
+* Services tests
 
 Things to do:
-* Add position to players migrations
-* Models validations
-* Basic seeds file
-* Models methods
+* Separate GlobalDice from DiceRoller
 * Setup doc
 
 Things you may want to cover:
