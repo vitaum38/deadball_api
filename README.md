@@ -10,7 +10,7 @@ Things done(ish):
 In progress:
 * Models validations
 * Models methods
-* DieRolle (as a gem?)
+* DieRoller (as a gem?)
 * Services tests
 
 Things to do:

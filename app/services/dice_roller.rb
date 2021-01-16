@@ -1,5 +1,6 @@
 class DiceRoller
   def initialize(string)
+    # should extract reading logic to another class?
     @dice_array = string.split('|')
     @rolls = []
   end
@@ -14,8 +15,10 @@ class DiceRoller
 
     #@dice_array[1..-1].each do |com|
     @dice_array.each do |com|
+      com.prepend('+') if !(['+', '-'].include?(com[0]))
       operator = com[0]
       roll = roll_dice(com[1..-1])
+
       res = res.send(operator, roll)
     end
 
@@ -37,7 +40,7 @@ class DiceRoller
   end
 
   def global_die(dice_number, dice_range, mods)
-    # This should be its own class, maybe treating d10 rolls
+    # should this be in its own class, maybe treating d10 rolls?
     result = 0
 
     dice_number.to_i.times do
